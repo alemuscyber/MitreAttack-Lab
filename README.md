@@ -70,8 +70,7 @@ image final
 
 **Lessons Learned**
 
-- *Detection logic needs to match what a technique **actually** generates — an initial 
-  Discovery query required 2+ distinct commands, but the atomic test alone only produced one; 
+- *Detection logic needs to match what a technique **actually** generates — I set up my discovery query to require 2+ distinct commands as treshold to avoid false-positives, but the atomic test alone only produced one; 
   had to manually extend the simulated behavior to properly exercise the detection.*
 
 - *Not every documented ATT&CK technique has platform-appropriate tooling available — 
