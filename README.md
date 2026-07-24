@@ -68,6 +68,22 @@ PowerShell Execution Detection image
 
 image final
 
+**Lessons Learned**
+
+*- Detection logic needs to match what a technique **actually** generates — an initial 
+  Discovery query required 2+ distinct commands, but the atomic test alone only produced one; 
+  had to manually extend the simulated behavior to properly exercise the detection.
+
+- Not every documented ATT&CK technique has platform-appropriate tooling available — 
+  validating tool/OS compatibility before committing to a technique saved significant rework.
+  
+- Alert grouping settings matter operationally: without "group all alerts from this rule into 
+  a single incident", a single real brute-force testing generated over 300 duplicate 
+  incidents in a matter of hours — a good reminder of how incident fatigue happens in real 
+  SOC environments.* 
+
+
+
 
 
 
