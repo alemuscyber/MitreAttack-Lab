@@ -1,2 +1,1 @@
-# MitreAttack-Lab
-MITRE ATT&amp;CK Technique Simulation &amp; Detection Engineering
+# MITRE ATT&CK Technique Simulation & Detection Engineering
