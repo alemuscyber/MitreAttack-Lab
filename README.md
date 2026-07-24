@@ -76,8 +76,8 @@ image final
 - *Not every documented ATT&CK technique has platform-appropriate tooling available — 
   validating tool/OS compatibility before committing to a technique saved significant rework.*
   
-- *Alert grouping settings matter operationally: without "group all alerts from this rule into 
-  a single incident", a single real brute-force testing generated over 300 duplicate 
+- *Alert grouping settings matter operationally: without "**group all alerts from this rule into 
+  a single incident**", a single real brute-force testing generated over 300 duplicate 
   incidents in a matter of hours — a good reminder of how incident fatigue happens in real 
   SOC environments.* 
 
