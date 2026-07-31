@@ -1,0 +1,24 @@
+//T1110.001 Brute Force Detection
+//Detects 5+ failed logon the same account within a 5-minute window — mapped to MITRE ATT&CK T1110.001.
+
+SecurityEvent
+| where EventID == 4625
+| summarize FailedAttempts = count() by Account, bin(TimeGenerated, 5m)
+| where FailedAttempts >= 5
+
+//T018 Remote System Discovery
+//Detects execution of multiple distinct "network reconnaissance commands (net, pirg, arp) by the sæne account within a 5-minute window — mnapped to MITRE ATT&CK T1018.
+
+SecurityEvent
+| where EventID == 4688
+| where NewProcessName has_any ("net.exe", "ping.exe", "arp.exe")
+| summarize DistinctCommands = dcount(NewProcessName), Commands = make_set(NewProcessName) by Account, bin(TimeGenerated, 5m)
+| where DistinctCommands >= 2
+
+//T1059.001
+//Detects PowerShell command execution events — mapped to MITRE ATT&CK T1059.001
+
+Event
+| where Source == "Microsoft-Windows-PowerShell" and EventID == 4104
+| where TimeGenerated > ago(5m)
+
