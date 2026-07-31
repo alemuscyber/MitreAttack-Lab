@@ -19,6 +19,7 @@ The Mitre Att&ck techniques covered are the following:
   - **Custom DCR** with XPath 'Microsoft-Windows-Powershell/Operational*' -> feeds the 'Event' table
  
 **Lab Walkthrough:**
+
 After setting up the VM, I accessed it using RDP and went forward to the Powershell using elevated privileges in order to enable the auditpol and then downloading Atomic Red Team, which is an open source library that emulate real-world attack techniques mapped to the MITRE ATT&CK framework.
 
 ![Image Alt](https://github.com/alemuscyber/MitreAttack-Lab/blob/1bd0c5c3ed2e1196ffebbc0da733435715524db0/images/Auditpool.png)
